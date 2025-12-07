@@ -3,7 +3,7 @@ import { Title } from "react-head";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
@@ -128,6 +128,14 @@ const SignUp = () => {
                   value="Sing Up"
                 />
               </form>
+              <p className="text-center">
+                <small>
+                  You have already account? {" "}
+                  <Link className="text-green-500 font-bold" to="/login">
+                    Login
+                  </Link>
+                </small>
+              </p>
             </div>
           </div>
         </div>

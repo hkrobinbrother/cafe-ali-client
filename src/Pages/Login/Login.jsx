@@ -112,9 +112,9 @@ const Login = () => {
 
               <SocialLogin></SocialLogin>
               </div>
-              <p>
+              <p className="text-center">
                 <small>
-                  New Here? Create an Account{" "}
+                  New Here? Create an Account! {" "}
                   <Link className="text-green-500 font-bold" to="/signup">
                     SignUp
                   </Link>
