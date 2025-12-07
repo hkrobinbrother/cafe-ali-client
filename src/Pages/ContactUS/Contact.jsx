@@ -10,14 +10,14 @@ import { Title } from "react-head";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="">
       <Title>CAFE-ALI | Contact</Title>
       <Cover bennerImg={contactCover} bennerTitle="Contact US"></Cover>
       <SectionTitle
         hading={"OUR LOCATION"}
         subheading={"VISITE US"}
       ></SectionTitle>
-      <div className="md:flex justify-around mb-4">
+      <div className="px-2 md:flex justify-around mb-4">
         <div className="border-gray-400 border-2">
           <div className="flex justify-center items-center bg-amber-600 py-6">
             <FaPhoneAlt />

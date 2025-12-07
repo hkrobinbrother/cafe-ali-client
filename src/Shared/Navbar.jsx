@@ -93,14 +93,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
+            className="menu menu-sm text-white font-bold dropdown-content bg-black/30 rounded-box z-1 mt-3 w-52 p-2 shadow "
           >
             {nav}
           </ul>
         </div>
         <a className=" flex flex-col items-center font-bold text-xl text-amber-300">
+          
           CAFE-ALI
-          <span>RESTAURANT</span>
+          <span className="italic">RESTAURANT</span>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex ">

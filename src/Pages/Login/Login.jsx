@@ -8,6 +8,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router";
 import { Title } from "react-head";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Components/SocialLogin";
 
 const Login = () => {
   const captchaRaf = useRef(null);
@@ -52,9 +53,9 @@ const Login = () => {
   return (
     <>
       <Title>CAFE-ALI | Login</Title>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content md:w-1/2 lg:flex">
-          <div className="text-center ">
+      <div className=" hero bg-base-200 min-h-screen">
+        <div className=" flex-wrap  px-2  md:hero-content  ">
+          <div className="text-center md:w-1/2 flex flex-col">
             <h1 className="text-5xl font-bold">Login now!</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
@@ -62,7 +63,7 @@ const Login = () => {
               et a id nisi.
             </p>
           </div>
-          <div className="card bg-base-100 md:w-1/2 max-w-sm shrink-0 shadow-2xl">
+          <div className=" card bg-base-100 md:w-1/2 max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               <form onSubmit={handleLogin} className="fieldset">
                 <label className="label">Email</label>
@@ -106,6 +107,11 @@ const Login = () => {
                   value="Login"
                 />
               </form>
+                <div className="divider">OR</div>
+              <div className="flex justify-center items-center">
+
+              <SocialLogin></SocialLogin>
+              </div>
               <p>
                 <small>
                   New Here? Create an Account{" "}
@@ -117,6 +123,7 @@ const Login = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );

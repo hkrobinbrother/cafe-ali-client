@@ -25,7 +25,7 @@ const Order = () => {
     <div>
       <Title>CAFE-ALI | ORDER</Title>
       <Cover bennerImg={orderImg} bennerTitle="ORder food"></Cover>
-      <div className= "mt-4 text-gray-500 font-bold">
+      <div className= "px-2 md:mt-4 text-gray-500 font-bold">
         <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList >
             <Tab>Salad</Tab>
@@ -33,7 +33,7 @@ const Order = () => {
             <Tab>Soup</Tab>
             <Tab>Dessert</Tab>
             <Tab>Drink</Tab>
-            <Tab>Salad</Tab>
+           
           </TabList>
           <TabPanel>
            <OrderTab items={dessert}/>

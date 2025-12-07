@@ -11,8 +11,8 @@ const Hero = () => {
         }}
       >
        
-        <div className="hero-content bg-white p-30 px-62 mt-20 mb-20 text-neutral-content text-center">
-          <div className="max-w-md bg-white text-gray-700">
+        <div className=" md:hero-content bg-black/30 z-10 rounded-lg p-30 w  -62 mt-20 mb-20 text-neutral-content text-center">
+          <div className=" max-w-md bg-white rounded-lg text-gray-700 flex flex-col justify-center items-center ">
             <h1 className="mb-5 text-5xl font-bold uppercase">Cafe Ali</h1>
             <p className="mb-5">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

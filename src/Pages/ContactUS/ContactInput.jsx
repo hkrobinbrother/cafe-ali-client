@@ -8,7 +8,7 @@ const ContactInput = () => {
         hading={"Contact From"}
         subheading={"Send Us A Message"}
       ></SectionTitle>
-      <div className="bg-gray-300 p-12 space-y-4 mb-12
+      <div className="px-2 md:bg-gray-300 p-12 space-y-4 mb-12
       ">
         <div className="flex gap-4 ">
           <div className="w-full">

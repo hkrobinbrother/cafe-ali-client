@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
+  const axiosPublic = useAxiosPublic();
   const {
     register,
     handleSubmit,
@@ -13,7 +15,7 @@ const SignUp = () => {
     reset,
   } = useForm();
   const { crateUser, updateUserProfile } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -22,15 +24,24 @@ const SignUp = () => {
       console.log(loggerUser);
       updateUserProfile(data.name, data.PhotoURL)
         .then(() => {
-          console.log("user profile updated");
-          reset();
+          
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log('user added the database')
+              reset();
 
-          Swal.fire({
-            title: "user crate success",
-            icon: "success",
-            draggable: true,
+              Swal.fire({
+                title: "user crate success",
+                icon: "success",
+                draggable: true,
+              });
+              navigate("/");
+            }
           });
-          navigate('/')
         })
         .catch((error) => console.log(error));
     });
@@ -40,8 +51,8 @@ const SignUp = () => {
     <>
       <Title>CAFE-ALI | SignUP</Title>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col w-1/2 lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
+        <div className="hero-content flex-col  lg:flex-row-reverse">
+          <div className="text-center md:text-left w-1/2 ">
             <h1 className="text-5xl font-bold">Sign Up now!</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
@@ -49,7 +60,7 @@ const SignUp = () => {
               et a id nisi.
             </p>
           </div>
-          <div className="card bg-base-100 w-1/2 max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-base-100 md:w-1/2 max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)} className="fieldset">
                 <label className="label">Name</label>

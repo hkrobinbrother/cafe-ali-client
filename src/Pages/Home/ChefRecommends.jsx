@@ -9,7 +9,7 @@ const ChefRecommends = () => {
         hading={"Chef Recommends"}
         subheading={"Should Try"}
       ></SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 px-2 md:grid-cols-3 gap-4">
         <div className="card bg-base-100 w-96 shadow-sm">
           <figure className=
           "">
