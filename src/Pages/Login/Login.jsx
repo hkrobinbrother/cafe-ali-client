@@ -21,6 +21,9 @@ const Login = () => {
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
+
+  
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -28,8 +31,7 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
     // ---------
-    signIn(email, password)
-    .then((result) => {
+    signIn(email, password).then((result) => {
       const user = result.user;
       console.log(user);
 
@@ -38,7 +40,7 @@ const Login = () => {
         icon: "success",
         draggable: true,
       });
-      navigate(from,{replace:true});
+      navigate(from, { replace: true });
     });
   };
   const handleValidateCaptcha = () => {
@@ -107,14 +109,13 @@ const Login = () => {
                   value="Login"
                 />
               </form>
-                <div className="divider">OR</div>
+              <div className="divider">OR</div>
               <div className="flex justify-center items-center">
-
-              <SocialLogin></SocialLogin>
+                <SocialLogin></SocialLogin>
               </div>
               <p className="text-center">
                 <small>
-                  New Here? Create an Account! {" "}
+                  New Here? Create an Account!{" "}
                   <Link className="text-green-500 font-bold" to="/signup">
                     SignUp
                   </Link>
@@ -123,7 +124,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </>
   );

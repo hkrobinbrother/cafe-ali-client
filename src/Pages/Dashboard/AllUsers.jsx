@@ -9,7 +9,7 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axioSecure("/users");
+      const res = await axioSecure.get("/users");
       return res.data;
     },
   });
@@ -39,7 +39,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        useAxiosSecure.delete(`/users/${user._id}`).then((res) => {
+        axioSecure.delete(`/users/${user._id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire({
