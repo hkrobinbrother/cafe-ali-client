@@ -60,7 +60,7 @@ const SignUp = () => {
               et a id nisi.
             </p>
           </div>
-          {/* <div className="card bg-base-100 md:w-1/2 max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-base-100 md:w-1/2 max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)} className="fieldset">
                 <label className="label">Name</label>
@@ -137,7 +137,7 @@ const SignUp = () => {
                 </small>
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
