@@ -24,10 +24,11 @@ const ContactInput = () => {
             <label htmlFor="phone">Phone</label>
             <input type="number" name="" id="" placeholder="  Enter Your Number" className="w-full py-2 bg-white  border-gray-400 border-2" />
         </div>
-        <div>
-            <label htmlFor="message">Message</label>
-            <input type="text" placeholder=" Enter Your Message" className="w-full h-36 text-start  border-gray-400 border-2 bg-white" />
-        </div>
+         <fieldset className="fieldset">
+          <legend className="fieldset-legend">Message</legend>
+          <textarea className="textarea w-full h-28" placeholder="Message"></textarea>
+          
+        </fieldset>
         <div className="flex gap-2 border-2 border-gray-500 w-fit p-2">
             <input type="checkbox" name="" id="" />
             <p>I am Not a Robot</p>

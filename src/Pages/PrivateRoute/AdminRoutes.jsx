@@ -4,7 +4,7 @@ import UserAuth from '../../hooks/UserAuth';
 import { Navigate, useLocation } from 'react-router';
 
 const AdminRoutes = ({children}) => {
-    const [user,loading] = UserAuth() 
+    const {user,loading} = UserAuth() 
     const [isAdmin,isAdminLoading] = useAdmin()
      const location = useLocation()
     if(loading || isAdminLoading){
@@ -13,7 +13,7 @@ const AdminRoutes = ({children}) => {
     if(user && isAdmin){
         return children
     }
-    return <Navigate to="/login" state={{from:location}} replace></Navigate>
+    return <Navigate to="/" state={{from:location}} replace></Navigate>
 
 };
 
