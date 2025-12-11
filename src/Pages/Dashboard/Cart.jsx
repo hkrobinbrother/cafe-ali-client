@@ -4,6 +4,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import Swal from "sweetalert2";
 
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Link } from "react-router";
 
 const Cart = () => {
   const [cart,refetch] = useCart();
@@ -37,10 +38,16 @@ const Cart = () => {
 
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between bg-amber-600 rounded-t-2xl p-4">
         <h2 className="text-4xl">Items: {cart.length}</h2>
         <h2 className="text-4xl">Total Price: {totalPrice}</h2>
-        <button className="btn bg-green-400">Pay</button>
+        {
+          cart.length ? 
+          <Link to="/dashboard/payment">
+          <button  className="btn bg-green-400">Pay</button>
+        </Link> 
+        : <button disabled className="btn bg-green-400">Pay</button>
+         }
       </div>
       <div>
         <div className="overflow-x-auto">
@@ -65,7 +72,7 @@ const Cart = () => {
                         <div className="mask mask-squircle h-12 w-12">
                           <img
                             src={item.image}
-                            alt="Avatar Tailwind CSS Component"
+                             alt="Avatar Tailwind CSS Component"
                           />
                         </div>
                       </div>
