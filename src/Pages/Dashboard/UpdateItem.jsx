@@ -11,6 +11,7 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 
 const UpdateItem = () => {
   const {name, category,recipe,price,_id} = useLoaderData();
+  // console.log(useLoaderData)
    const { register, handleSubmit ,reset} = useForm();
      const axiosPublic = useAxiosPublic();
    const axioSecure = useAxiosSecure();
@@ -28,13 +29,14 @@ const UpdateItem = () => {
       const menuItem = {
         name: data.name,
         category: data.category,
+        recipe:data.recipe, 
         price: parseFloat(data.price),
         image: res.data.data.display_url,
       };
-      const menuRes = await axioSecure.patch(`/menu${_id}`, menuItem);
+      const menuRes = await axioSecure.patch(`/menu/${_id}`, menuItem);
       console.log("send server item", menuRes.data);
       if (menuRes.data.modifiedCount > 0) {
-        reset()
+        // reset()
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -113,10 +115,10 @@ const UpdateItem = () => {
 
           <div className="">
             <input
-              {...register("image", { required: true })}
+              {...register("image")}
               type="file"
               className="file-input"
-              required
+              
             />
           </div>
 
