@@ -6,10 +6,12 @@ import "sweetalert2/src/sweetalert2.scss";
 import "sweetalert2/src/sweetalert2.scss";
 import { MdShoppingCart } from "react-icons/md";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin()
   const [cart] = useCart()
   const handleLogOut = () => {
     logOut()
@@ -36,6 +38,12 @@ const Navbar = () => {
       <li>
         <Link to="/contact">Contact Us</Link>
       </li>
+      {
+        user && isAdmin && <Link to="/dashboard/adminHome">Contact Us</Link>
+      }
+      {
+        user && !isAdmin && <Link to="/dashboard/userHome">Contact Us</Link>
+      }
       <li>
         <Link to="/dashboard/cart">
           <button className="btn bg-black/30 border-none ">
