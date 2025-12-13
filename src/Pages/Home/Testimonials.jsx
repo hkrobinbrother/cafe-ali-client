@@ -11,7 +11,7 @@ import { FaCommentAlt } from "react-icons/fa";
 const Testimonials = () => {
   const [reviews, setreviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("http://https://cafe-ali-server.vercel.app0/reviews")
       .then((res) => res.json())
       .then((data) => setreviews(data));
   }, []);

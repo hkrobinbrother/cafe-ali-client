@@ -4,7 +4,7 @@ import UserAuth from "./UserAuth";
 
 
 const axiosSecure = axios.create({
-    baseURL:"http://localhost:5000"
+    baseURL:"https://cafe-ali-server.vercel.app"
 })
 
 const useAxiosSecure = () => {
