@@ -45,7 +45,7 @@ const Login = () => {
   };
   const handleValidateCaptcha = () => {
     const value = captchaRaf.current.value;
-    console.log(value);
+    // console.log(value);
     if (validateCaptcha(value) == true) {
       setDisabled(false);
     } else {

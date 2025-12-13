@@ -16,7 +16,7 @@ const UpdateItem = () => {
      const axiosPublic = useAxiosPublic();
    const axioSecure = useAxiosSecure();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     // image url create
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -34,7 +34,7 @@ const UpdateItem = () => {
         image: res.data.data.display_url,
       };
       const menuRes = await axioSecure.patch(`/menu/${_id}`, menuItem);
-      console.log("send server item", menuRes.data);
+      // console.log("send server item", menuRes.data);
       if (menuRes.data.modifiedCount > 0) {
         // reset()
         Swal.fire({
@@ -46,7 +46,7 @@ const UpdateItem = () => {
         });
       }
     }
-    console.log("with img bb url", res.data);
+    // console.log("with img bb url", res.data);
   };
   
   return (

@@ -12,7 +12,7 @@ const AddItems = () => {
   const axiosPublic = useAxiosPublic();
   const axioSecure = useAxiosSecure();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     // image url create
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -29,7 +29,7 @@ const AddItems = () => {
         image: res.data.data.display_url,
       };
       const menuRes = await axioSecure.post("/menu", menuItem);
-      console.log("send server item", menuRes.data);
+      // console.log("send server item", menuRes.data);
       if (menuRes.data.insertedId) {
         reset()
         Swal.fire({
@@ -41,7 +41,7 @@ const AddItems = () => {
         });
       }
     }
-    console.log("with img bb url", res.data);
+    // console.log("with img bb url", res.data);
   };
   return (
     <div>

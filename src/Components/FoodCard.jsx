@@ -14,7 +14,7 @@ const FoodCard = ({ item }) => {
   const handleCart = (food) => {
     if (user && user.email) {
       //  todo send cart item database
-      console.log(user.email, food);
+      // console.log(user.email, food);
       const cartItem = {
         menuId: _id,
         email: user.email,
@@ -23,7 +23,7 @@ const FoodCard = ({ item }) => {
         price,
       };
       axiosSecure.post("/carts", cartItem).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.insertedId) {
           Swal.fire({
             position: "top-end",

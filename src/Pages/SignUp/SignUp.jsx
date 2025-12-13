@@ -18,7 +18,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     crateUser(data.email, data.password).then((result) => {
       const loggerUser = result.user;
       console.log(loggerUser);
@@ -31,7 +31,7 @@ const SignUp = () => {
           };
           axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId) {
-              console.log('user added the database')
+              // console.log('user added the database')
               reset();
 
               Swal.fire({

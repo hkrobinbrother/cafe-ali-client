@@ -69,7 +69,7 @@ const CheckOutFrom = () => {
     } else {
       console.log("payment intent", paymentIntent);
       if (paymentIntent.status === "succeeded") {
-        console.log("transaction id", paymentIntent.id);
+        // console.log("transaction id", paymentIntent.id);
         setTransactionId(paymentIntent.id);
 
         const payment = {
@@ -83,7 +83,7 @@ const CheckOutFrom = () => {
         };
 
         const res = await axiosSecure.post("/payments", payment);
-        console.log("payment saved", res.data);
+        // console.log("payment saved", res.data);
         refetch();
         if (res.data.paymentResult?.insertedId) {
           Swal.fire({
